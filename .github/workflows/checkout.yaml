@@ -10,7 +10,7 @@ env:
   PROJECT_ID: noted-acronym-451221-n4
   REGION: northamerica-south1
   APP: mysite
-  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/${PROJECT_ID}/${APP}
+  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite
 
 jobs:
   deploy:
