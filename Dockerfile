@@ -6,7 +6,7 @@ ENV PYTHONUNBUFFERED=1
 # Install dependencies
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
-COPY ./mysite /mysite
+COPY ./djangotutorial /mysite
 WORKDIR /mysite
 EXPOSE 8000
 
