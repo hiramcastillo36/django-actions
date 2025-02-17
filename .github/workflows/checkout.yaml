@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  SERVICE_NAME: mysite-service
+  SERVICE_NAME: mysite
   PROJECT_ID: noted-acronym-451221-n4
   REGION: northamerica-south1
   APP: mysite
