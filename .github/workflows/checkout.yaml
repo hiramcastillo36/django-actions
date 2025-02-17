@@ -10,7 +10,7 @@ env:
   PROJECT_ID: noted-acronym-451221-n4
   REGION: northamerica-south1
   APP: mysite
-  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite
+  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite/image
 
 jobs:
   deploy:
@@ -37,11 +37,14 @@ jobs:
         - name: 'Configure Docker'
           run:  |
             gcloud init
-            gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://northamerica-south1-docker.pkg.dev
+            gcloud auth configure-docker northamerica-south1-docker.pkg.dev
 
         - name: 'Build the Docker image'
-          run: |
-            docker build -t ${{ env.DOCKER_IMAGE_URL }} .
+          run: |-
+
+            docker build \
+                --tag "${{ env.DOCKER_IMAGE_URL }}:${GITHUB_SHA}" \
+                --file Dockerfile .
             docker push ${{ env.DOCKER_IMAGE_URL }}
 
         - name: 'Deploy the Docker image to Cloud Run'
