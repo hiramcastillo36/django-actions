@@ -37,7 +37,7 @@ jobs:
         - name: 'Configure Docker'
           run:  |
             gcloud init
-            gcloud auth configure-docker northamerica-south1-docker.pkg.dev
+            gcloud auth print-access-token | sudo docker login -u oauth2accesstoken --password-stdin https://northamerica-south1-docker.pkg.dev
 
         - name: 'Build the Docker image'
           run: |
