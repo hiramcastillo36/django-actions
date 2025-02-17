@@ -35,7 +35,9 @@ jobs:
           uses: 'google-github-actions/setup-gcloud@v2'
 
         - name: 'Configure Docker'
-          run: gcloud auth configure-docker us-central1-docker.pkg.dev
+          run:  |
+            gcloud init
+            gcloud auth configure-docker us-central1-docker.pkg.dev
 
         - name: 'Build the Docker image'
           run: |
