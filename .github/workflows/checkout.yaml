@@ -41,7 +41,7 @@ jobs:
 
         - name: 'Build the Docker image'
           run: |
-            docker build ${{ env.DOCKER_IMAGE_URL }}
+            docker build -t ${{ env.DOCKER_IMAGE_URL }}
             docker push ${{ env.DOCKER_IMAGE_URL }}
 
         - name: 'Deploy the Docker image to Cloud Run'
