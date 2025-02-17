@@ -10,7 +10,7 @@ env:
   PROJECT_ID: noted-acronym-451221-n4
   REGION: us-central1
   APP: app
-  DOCKER_IMAGE_URL: us-central1-docker.pkg.dev/${PROJECT_ID}/${APP}/${APP}
+  DOCKER_IMAGE_URL: us-central1-docker.pkg.dev/${PROJECT_ID}/${APP}
 
 jobs:
   deploy:
