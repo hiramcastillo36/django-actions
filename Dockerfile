@@ -30,3 +30,7 @@ RUN python -m venv /py && \
 ENV PATH="/py/bin:$PATH"
 
 USER django-user
+
+# Run the application
+
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
