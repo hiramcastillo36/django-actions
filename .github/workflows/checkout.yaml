@@ -8,9 +8,9 @@ on:
 env:
   SERVICE_NAME: mysite
   PROJECT_ID: noted-acronym-451221-n4
-  REGION: northamerica-south1
+  REGION: us-south1
   APP: mysite
-  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite/image
+  DOCKER_IMAGE_URL: us-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite-final/image
   SERVICE_ACCOUNT: github-actions-service-account@noted-acronym-451221-n4.iam.gserviceaccount.com
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
         - name: 'Configure Docker'
           run:  |
             gcloud init
-            gcloud auth configure-docker northamerica-south1-docker.pkg.dev
+            gcloud auth configure-docker us-south1-docker.pkg.dev
 
         - name: 'Build the Docker image'
           run: |-
