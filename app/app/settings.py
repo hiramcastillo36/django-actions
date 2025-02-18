@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-eo&ap0()2fhxc0z=y^+9howvubfj@jxigbjqqzhk83=0v2cd-n
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*',
+    'mysite-660237705084.us-south1.run.app',
 ]
 
 
