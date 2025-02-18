@@ -12,7 +12,7 @@ services:
       - ./mysite:/mysite
     command: >
       sh -c "python manage.py migrate &&
-             python manage.py runserver 0.0.0.0:8000"
+             python manage.py runserver"
     environment:
       - DB_HOST=db
       - DB_NAME=${DB_NAME}
