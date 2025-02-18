@@ -10,7 +10,8 @@ env:
   PROJECT_ID: noted-acronym-451221-n4
   REGION: northamerica-south1
   APP: mysite
-  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite/app:latest
+  DOCKER_IMAGE_URL: northamerica-south1-docker.pkg.dev/noted-acronym-451221-n4/mysite
+  SERVICE_ACCOUNT: github-actions-service-account@noted-acronym-451221-n4.iam.gserviceaccount.com
 
 jobs:
   deploy:
