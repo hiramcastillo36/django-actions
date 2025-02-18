@@ -7,12 +7,12 @@ services:
       args:
         - DEV=true
     ports:
-      - "8000:8000"
+      - "8080:8080"
     volumes:
       - ./mysite:/mysite
     command: >
       sh -c "python manage.py migrate &&
-             python manage.py runserver"
+             python manage.py runserver 0.0.0.0:8080"
     environment:
       - DB_HOST=db
       - DB_NAME=${DB_NAME}

@@ -8,7 +8,7 @@ COPY ./requirements.txt /tmp/requirements.txt
 COPY ./requirements.dev.txt /tmp/requirements.dev.txt
 COPY ./djangotutorial /mysite
 WORKDIR /mysite
-EXPOSE 8000
+EXPOSE 8080
 
 ARG DEV=false
 RUN python -m venv /py && \
