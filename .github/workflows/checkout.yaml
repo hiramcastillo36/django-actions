@@ -48,9 +48,12 @@ jobs:
             docker push ${{ env.DOCKER_IMAGE_URL }}
 
         - name: 'Deploy the Docker image to Cloud Run'
-          run: |
-            gcloud run deploy $SERVICE_NAME \
-              --image ${{ env.DOCKER_IMAGE_URL }} \
-              --platform managed \
-              --region ${{ env.REGION }} \
-              --allow-unauthenticated
+          id: 'deploy'
+          uses: 'google-github-actions/deploy-cloudrun@v0'
+          with:
+            service: ${{ env.SERVICE_NAME }}
+            region: ${{ env.REGION }}
+            image: ${{ env.DOCKER_IMAGE_URL }}
+
+        - name: Show Output
+          run: echo ${{ steps.deploy.outputs.url }}
