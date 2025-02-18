@@ -49,7 +49,7 @@ jobs:
 
         - name: 'Deploy the Docker image to Cloud Run'
           run: |
-            gcloud run deploy ${{ env.SERVICE_NAME }} \
+            gcloud run deploy $SERVICE_NAME \
               --image ${{ env.DOCKER_IMAGE_URL }} \
               --platform managed \
               --region ${{ env.REGION }} \
