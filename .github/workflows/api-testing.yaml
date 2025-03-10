@@ -19,7 +19,7 @@ jobs:
           DB_USER: testuser
           DB_PASSWORD: testpassword
         run: |
-          docker compose -f docker-compose.yml up -d
+          docker compose up -d
           sleep 15
 
       - name: Setup Node.js
@@ -39,4 +39,4 @@ jobs:
 
       - name: Stop containers
         if: always()
-        run: docker compose -f docker-compose.yml down
+        run: docker compose down
