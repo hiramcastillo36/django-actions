@@ -1,4 +1,4 @@
-name: "Django App"
+name: "django_app"
 
 services:
   app:
