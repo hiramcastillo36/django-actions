@@ -19,8 +19,7 @@ jobs:
           DB_USER: testuser
           DB_PASSWORD: testpassword
         run: |
-          docker build --file Dockerfile .
-          docker compose up
+          docker compose -f docker-compose.test.yml up -d
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
