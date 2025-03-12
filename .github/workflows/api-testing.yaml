@@ -21,29 +21,6 @@ jobs:
         run: |
           docker compose -f docker-compose.test.yml up
 
-      - name: Wait for API to be ready
-        run: |
-          echo "Waiting for API to start..."
-          # Wait a bit longer for Django to fully initialize
-          sleep 30
-
-          # Verify the API is actually running and responding
-          for i in {1..10}; do
-              if curl -s http://localhost:8080/api/books/books > /dev/null; then
-              echo "API is ready!"
-              break
-              fi
-
-              echo "API not ready, waiting..."
-              sleep 5
-
-              if [ $i -eq 10 ]; then
-              echo "API failed to start in time"
-              docker compose -f docker-compose.test.yml logs app
-              exit 1
-              fi
-          done
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
