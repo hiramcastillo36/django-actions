@@ -33,5 +33,4 @@ jobs:
 
       - name: Run Postman Collection
         run: |
-          newman run ./postman/Ixmatix.postman_collection.json \
-            -e ./postman/environment.json
+          newman run ./postman/Ixmatix.postman_collection.json
