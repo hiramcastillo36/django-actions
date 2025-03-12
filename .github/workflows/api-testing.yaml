@@ -37,7 +37,7 @@ jobs:
               echo "API not ready, waiting..."
               sleep 5
 
-              if [ $i -eq 10 ]; then
+              if [ $i -eq 3 ]; then
               echo "API failed to start in time"
               docker compose -f docker-compose.test.yml logs app
               exit 1
